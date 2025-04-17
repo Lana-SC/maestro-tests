@@ -1,0 +1,22 @@
+appId: com.sitecapture.app.sitecapture.dev
+clearState: false
+---
+# TEST CASE: ALL BAT TEST CASES
+
+# 1. Add at least 3 photos to the gallery before executing this test (5_1_bat.yaml)
+# 2. Verify Version, Build Number and Username (3_bat.yaml)
+# 3. Export MAESTRO_CLI_AI_KEY=your_key (3_bat.yaml) - will skip if not set
+
+- runFlow: 1_bat.yaml
+- runFlow: 2_bat.yaml
+- runFlow: 3_bat.yaml
+- runFlow: 4_bat.yaml
+- runFlow: 5_1_bat_dev.yaml
+- runFlow: 5_2_bat.yaml
+- runFlow: 6_bat.yaml
+- runFlow: 7_1_bat.yaml
+- runFlow: 8_bat.yaml
+- runFlow: 9_bat.yaml
+- runFlow: 10_bat.yaml
+- runFlow: 11_bat.yaml
+- runFlow: 12_bat.yaml

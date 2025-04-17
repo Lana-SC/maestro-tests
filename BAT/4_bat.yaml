@@ -1,0 +1,22 @@
+appId: com.sitecapture.app.sitecapture.dev
+clearState: false
+---
+# TEST CASE: Create a new project from a template
+
+- extendedWaitUntil:
+    visible:
+      text: "Synced"
+    timeout: 30000
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/floating_add_button"
+    label: "Tap on add button"
+
+- tapOn: "QA BAT Template March 2023 - sample image (solar)"
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/done_button
+    label: "Tap on CREATE"
+    
+- assertVisible: "ACCEPT"
+

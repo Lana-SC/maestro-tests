@@ -1,0 +1,138 @@
+#add at least 3photos to the gallery before executing this test
+
+appId: com.sitecapture.app.sitecapture.dev
+
+env:
+  BIN_ID: '67808925e41b4d34e472e0b3'
+  X_MASTER_KEY: '$2a$10$L65uZBOHFGcVad9WrMQSW.b4vKxuDPFxZbHEkREUhXdgbVgxQGhwq'
+---
+
+# TEST CASE: Test Display fields
+
+- assertVisible: "ACCEPT"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/buttonAccept"
+    label: "Tap on ACCEPT"
+
+- assertVisible: "accepted"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/section_label"
+    index: 0
+
+- assertVisible:
+    id: com.sitecapture.app.sitecapture.dev:id/field_input_text
+
+- runScript:
+    file: ../../scripts/jsonBinPost.js
+- runScript:
+    file: ../../scripts/jsonBinGet.js
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/field_input_text
+    index: 0
+    label: "Tap on Display Field 1"
+- eraseText
+- inputText:
+    text: "${output.result}"
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/field_comment_text
+    index: 0
+    label: "Tap on Display Field 2"
+- eraseText
+- inputText: "Example Comment Text"
+- assertVisible: "Example Comment Text"
+
+- assertNotVisible:
+    id: com.sitecapture.app.sitecapture.dev:id/field_thumbnails
+    index: 0
+    label: "Confirm media file is not visible under Displayed field 2"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/camera_icon"
+    index: 1
+    label: "Tap on camera icon"
+- runFlow:
+    when:
+      visible: "Allow SiteCapture to take pictures and record video?" 
+    commands:   
+    - tapOn:
+        id: "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
+        label: 'Tap on "While using the app"'
+
+- runFlow:
+    when:
+      visible: "Allow SiteCapture to record audio?"
+    commands:  
+    - tapOn:
+        id: "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
+        label: 'Tap on "While using the app"'          
+
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/button_done"
+    label: "Tap on done button"
+
+- assertVisible:
+    id: com.sitecapture.app.sitecapture.dev:id/field_thumbnails
+    index: 0
+    label: "Confirm photo is visible under Displayed field 1"
+
+- assertNotVisible:
+     id: com.sitecapture.app.sitecapture.dev:id/field_thumbnails
+     index: 1
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/camera_icon"
+    index: 2
+    label: "Tap on camera icon"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/button_albums"
+    label: "Tap on albums button"
+
+- tapOn:
+    id: "com.google.android.apps.photos:id/image"
+    label: "Tap on saved photo gallery"
+
+- tapOn:
+    point: "12%,26%"
+    label: "Tap on saved photo 1"
+
+- tapOn:
+    point: "37%,26%"
+    label: "Tap on saved photo 2"
+
+- tapOn:
+    point: "63%,26%"
+    label: "Tap on saved photo 3"
+
+- tapOn: "More options"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/button_done"
+    label: "Tap on DONE"
+
+- assertVisible:
+     id: com.sitecapture.app.sitecapture.dev:id/field_thumbnails
+     index: 1
+
+- assertWithAI:
+    assertion: Confirm 3 individual photos are visible under Displayed field 3, only pay attension to the amount of photos, nothing else
+
+- tapOn: "Navigate up"
+
+- assertVisible: "All field types"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/refresh_button"
+
+- extendedWaitUntil:
+    visible:
+      text: "Synced"
+    timeout: 45000    

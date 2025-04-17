@@ -1,0 +1,93 @@
+appId: com.sitecapture.app.sitecapture.dev
+---
+# TEST CASE: Sync (project list and project details)
+
+#Sync from project details screen
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/section_label"
+    index: 0
+    label: 'Tap on "Display Field"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/camera_icon"
+    index: 0    
+    label: "Tap on camera icon"
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button" 
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/button_done"
+    label: 'Tap on "Done" button'
+
+#confirmation
+- assertVisible:
+    id: "com.sitecapture.app.sitecapture.dev:id/field_thumbnails"
+    label: "assert Photos were added"
+
+- tapOn: "Navigate up"    
+- assertVisible: "Ready to Sync - 5 photos"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/refresh_button"
+    label: 'Tap on "Sync" icon'
+     
+- assertVisible: "Synced"  
+
+#Auto-Sync from project list page
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/section_label"
+    index: 0
+    label: 'Tap on "Display Field"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/camera_icon"
+    index: 1    
+    label: "Tap on camera icon of Display field 2"
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button" 
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/button_capture
+    label: "Tap on capture button"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/button_done"
+    label: 'Tap on "Done" button'    
+
+#confirmation
+- assertVisible:
+    id: "com.sitecapture.app.sitecapture.dev:id/field_thumbnails"
+    label: "assert Photos were added"  
+
+- tapOn: "Navigate up"    
+- assertVisible: "Ready to Sync - 5 photos"      
+- tapOn: "Navigate up"
+       
+- assertVisible: "Synced" 

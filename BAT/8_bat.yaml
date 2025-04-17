@@ -1,0 +1,33 @@
+appId: com.sitecapture.app.sitecapture.dev
+---
+# TEST CASE: Assign a manager (as a field user)
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/linesLayout"
+    index: 0
+    label: 'Tap on a project'
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/share_button"
+    label: 'Tap on "Share" button'
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/tv_set"
+    label: 'Tap on "Set.." button'
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/user_name"
+    index: 2
+    label: 'Select "lana-test-solar-manager"'  
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/confirm_button"
+    label: 'Tap on confirm button'
+
+- assertVisible:
+    id: "com.sitecapture.app.sitecapture.dev:id/tv_manager_name"
+    label: 'Asser that manager is "lana-test-solar-manager'  
+
+- tapOn: "Navigate up"                 
+- tapOn: "Navigate up" 
+

@@ -1,0 +1,7 @@
+appId: com.sitecapture.app.sitecapture.dev
+env:
+  BIN_ID: '67808925e41b4d34e472e0b3'
+  X_MASTER_KEY: '$2a$10$L65uZBOHFGcVad9WrMQSW.b4vKxuDPFxZbHEkREUhXdgbVgxQGhwq'
+---
+- runScript: # when this is exicuted new value is recorded in the bin
+    file: ../../scripts/jsonBinPost.js

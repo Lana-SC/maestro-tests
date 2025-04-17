@@ -1,0 +1,65 @@
+appId: com.sitecapture.app.sitecapture.dev
+---
+# TEST CASE: Forget password
+
+
+
+# Make sure to logout before continue
+- runFlow:
+    when:
+      visible: "\"Open\""
+    commands:
+      - tapOn: "\"Open\""
+      - tapOn: "Sign out"
+      - tapOn: "SIGN OUT"
+    
+    
+- assertVisible:
+    text: "Sign in"
+
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/forgot_password_button
+    label: "Tap on forgot password button"
+
+- runFlow:
+    when:
+      visible: "Use without an account"
+    commands:
+      - tapOn: "Use without an account"
+
+- runFlow:
+    when:
+      visible: "No thanks"
+    commands:
+      - tapOn: "No thanks"
+
+- tapOn: Username
+
+- runFlow:
+    when:
+      visible: "Cancel"
+    commands:
+      - tapOn: "Cancel"
+
+- inputText:
+    text: Lana-test-solar-field
+    label: "Input Username"
+
+- assertVisible: Lana-test-solar-field
+
+- runFlow:
+    when:
+      visible:
+        id: android:id/input_method_nav_back
+    commands:
+      - tapOn:
+          id: android:id/input_method_nav_back
+          label: "Tap on back button"
+
+- tapOn: Send Password Request
+
+- assertVisible: SiteCapture - Password Reset Email Sent
+
+ #IMPROVEMENT - Check if email was received
+
+- stopApp: com.android.chrome

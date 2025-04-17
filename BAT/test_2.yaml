@@ -1,0 +1,14 @@
+appId: https://test.sitecapture.com/
+env:
+  BIN_ID: '67808925e41b4d34e472e0b3'
+  X_MASTER_KEY: '$2a$10$L65uZBOHFGcVad9WrMQSW.b4vKxuDPFxZbHEkREUhXdgbVgxQGhwq'
+---
+
+- launchApp
+- tapOn: "username"
+- inputText:
+    text: "lana-test-solar-admin"
+- tapOn: "password"
+- inputText:
+    text: "test"
+- tapOn: "Sign in"

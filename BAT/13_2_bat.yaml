@@ -1,0 +1,28 @@
+appId: https://test.sitecapture.com/
+
+---
+# TEST CASE: Refresh configuration (web app part 1)
+
+
+- launchApp
+- tapOn: "username"
+- inputText:
+    text: "lana-test-solar-admin"
+- tapOn: "password"
+- inputText:
+    text: "test"
+- tapOn: "Sign in"
+
+- tapOn:
+    point: "90%,5%"
+    label: "Tap on dropdown"
+
+- extendedWaitUntil:
+    visible:
+      text: "Settings"
+    timeout: 50000
+
+- tapOn: "Settings"
+
+
+
