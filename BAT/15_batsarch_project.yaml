@@ -1,0 +1,35 @@
+appId: com.sitecapture.app.sitecapture.dev
+
+env:
+  BIN_ID: "67808925e41b4d34e472e0b3"
+  X_MASTER_KEY: "$2a$10$L65uZBOHFGcVad9WrMQSW.b4vKxuDPFxZbHEkREUhXdgbVgxQGhwq"
+
+---
+# TEST CASE: Search for Project 
+
+- tapOn: "Navigate up"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/displayLine1"
+    index: 0
+
+- tapOn:
+    id: "android:id/search_button"
+    label: "Tap on a Search Button"
+
+- runScript:
+    file: ../../scripts/jsonBinGet.js
+
+- inputText:
+    text: "${output.result}"
+
+- assertVisible:     
+    text: "${output.result}"
+
+- tapOn:
+    id: "android:id/search_close_btn"
+    label: 'Tap on "Close" button'
+
+- tapOn:
+    id: "android:id/search_close_btn"    
+

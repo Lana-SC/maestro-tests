@@ -1,0 +1,18 @@
+appId: com.sitecapture.app.sitecapture.dev
+clearState: false
+---
+# TEST CASE: Login. Invalid
+- runScript: ../scripts/credentials.js 
+
+- inputText:
+    text: ${output.credentials.invalid_username}
+    byText: "Username"
+- tapOn: "Password"
+- inputText:
+    text: ${output.credentials.invalid_password}
+    byText: "Password"
+- tapOn: "SIGN IN"
+
+- assertVisible: "Login Failed. Please verify credentials."
+
+

@@ -1,0 +1,20 @@
+appId: com.sitecapture.app.sitecapture.dev
+---
+# TEST CASE: View a report
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/linesLayout"
+    index: 0
+    label: 'Tap on a project'
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/report_button"
+    label: 'Tap on "Report" button'
+
+- assertVisible: "Unable to Generate Report"
+
+- tapOn:
+    id: "android:id/button1"
+    label: 'Tap "OK"'
+    
+

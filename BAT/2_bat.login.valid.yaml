@@ -1,0 +1,56 @@
+appId: com.sitecapture.app.sitecapture.dev
+clearState: false
+---
+# TEST CASE: Login. Valid
+- runScript: ../scripts/credentials.js 
+
+- inputText:
+    text: ${output.credentials.valid_username}
+    byText: "Username"
+- tapOn: "Password"
+- inputText:
+    text: ${output.credentials.valid_password}
+    byText: "Password"
+- tapOn: "SIGN IN"
+
+- extendedWaitUntil:
+    notVisible:
+      text: "SIGN IN"
+    timeout: 55000
+
+
+#assertVisible: "Allow SiteCapture to send you notifications?"
+# - tapOn:
+#    id: "com.android.permissioncontroller:id/permission_allow_button"
+#    label: 'Tap on "Allow"'
+
+
+
+- runFlow:
+    when:
+      visible: "Allow SiteCapture to send you notifications?"
+    commands:  
+      - tapOn:
+          id: "com.android.permissioncontroller:id/permission_allow_button"
+          label: 'Tap on "Allow"'
+
+#assertVisible: "Precise"
+# - tapOn:
+#    id: "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
+#    label: 'Tap on "While using the app"'
+
+
+- runFlow:
+    when:
+      visible: "Precise"
+    commands:  
+      - tapOn:
+          id: "com.android.permissioncontroller:id/permission_allow_foreground_only_button"
+          label: 'Tap on "While using the app"'
+   
+
+# Step 2: Wait for "Synced" text to appear
+- extendedWaitUntil:
+    visible:
+      text: "Synced"
+    timeout: 100000

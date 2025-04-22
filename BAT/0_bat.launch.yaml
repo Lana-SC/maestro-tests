@@ -1,0 +1,5 @@
+appId: com.sitecapture.app.sitecapture.dev
+---
+# TEST CASE: Launch
+
+- tapOn: "SiteCapture"

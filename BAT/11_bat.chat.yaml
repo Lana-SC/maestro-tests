@@ -1,0 +1,170 @@
+appId: com.sitecapture.app.sitecapture.dev
+
+---
+# TEST CASE: Chat
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/fl_chat_action"
+    label: 'Tap on "Chat icon"'
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/messageEditText"
+    label: 'Tap on "Write something here"'
+
+- inputText:
+    text: Hello
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/sendMessageButton"
+    label: Send a message
+
+- assertVisible: "Hello"    
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/attachmentsButton"
+    label: 'Tap on attachment button'
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/mediaThumbnailImageView"
+    index: 1
+    label: "Select an attachment"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/attachButton"
+   
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/sendMessageButton"
+    label: "Send an attachment"   
+
+- assertVisible:
+    id: "com.sitecapture.app.sitecapture.dev:id/imageView"
+
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/backButton"
+    label: "Go back"
+
+- tapOn: "Navigate up"
+- tapOn: "\"Open\""
+
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/design_menu_item_text"
+    index: 7
+    label: "Sign Out"
+
+- tapOn: "SIGN OUT"   
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/editTextUsername"
+    label: 'Tap on "Username"'
+
+- inputText:
+    text: "lana-test-solar-admin"
+    byText: "Username"
+- tapOn: "Password"
+- inputText:
+    text: "test"
+    byText: "Password"
+- tapOn: "SIGN IN"    
+
+- extendedWaitUntil:
+    visible:
+      text: "Synced"
+    timeout: 100000
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/menu_filter"
+    label: 'Tap on "Filter icon"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/rb_sort"
+    label: 'Tap on "Sort"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/newestFirst"
+    label: 'Tap on "Newest First"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/apply_button"
+    label: 'Tap on "Apply" button'    
+- assertVisible: 
+    text: " Newest"     
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/linesLayout"
+    index: 0
+    label: "Tap on a project"
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/fl_chat_action"
+    label: 'Tap on "Chat icon"'
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/messageEditText"
+    label: 'Tap on "Write something here"'
+
+- inputText:
+    text: Hi
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/sendMessageButton"
+    label: Send a message    
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/backButton"
+    label: "Go back"
+
+- tapOn: "Navigate up"
+- tapOn: "\"Open\""
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/design_menu_item_text"
+    index: 7
+    label: "Sign Out"
+
+- tapOn: "SIGN OUT"       
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/editTextUsername"
+    label: 'Tap on "Username"'
+
+- inputText:
+    text: "lana-test-solar-field"
+    byText: "Username"
+- tapOn: "Password"
+- inputText:
+    text: "test"
+    byText: "Password"
+- tapOn: "SIGN IN"    
+
+- extendedWaitUntil:
+    visible:
+      text: "Synced"
+    timeout: 35000
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/menu_filter"
+    label: 'Tap on "Filter icon"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/rb_sort"
+    label: 'Tap on "Sort"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/newestFirst"
+    label: 'Tap on "Newest First"'
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/apply_button"
+    label: 'Tap on "Apply" button'    
+- assertVisible: 
+    text: " Newest"     
+
+- assertVisible:
+    id: "com.sitecapture.app.sitecapture.dev:id/tv_chat_count"
+    label: "Verify the chat badge count number on project list is visible"    
+
+- tapOn:
+    id: "com.sitecapture.app.sitecapture.dev:id/linesLayout"
+    index: 0
+    label: 'Tap on a project'
+
+- tapOn:
+    point: "94%,8%"
+    label: "Tap on a chat icon"    
+
+

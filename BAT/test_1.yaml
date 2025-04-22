@@ -1,0 +1,32 @@
+appId: com.sitecapture.app.sitecapture.dev
+---
+# TEST CASE: Forget password
+- tapOn:
+    id: com.sitecapture.app.sitecapture.dev:id/forgot_password_button
+    label: "Tap on forgot password button"
+
+- runFlow:
+    when:
+      visible: "Use without an account"
+    commands:
+      - tapOn: "Use without an account"
+
+- runFlow:
+    when:
+      visible: "No thanks"
+    commands:
+      - tapOn: "No thanks"
+
+- runFlow:
+    when:
+      visible: "Cancel"
+    commands:
+      - tapOn: "Cancel"
+
+- assertVisible: "Username"
+- tapOn: "Username"
+- tapOn: "Username"
+
+- inputText:
+    text: Lana-test-solar-field
+    label: "Input Username"
