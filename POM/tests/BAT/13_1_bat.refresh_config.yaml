@@ -1,8 +1,0 @@
-appId: com.sitecapture.app.sitecapture.dev
-
----
-# TEST CASE: Refresh configuration (mobile app part 1)
-
-- tapOn: "Navigate up"
-- tapOn: "Navigate up"
-- tapOn: "\"Close\""
