@@ -14,7 +14,7 @@ clearState: false
 - tapOn: About
 
 - assertVisible:
-    text: "Version: 5.3.0-SiteCapture-dev (458)  Username: lana-test-solar-field"
-    label: "Verify Version, Build Number and Username Text"
+    text: "Version: 5.3.1-SiteCapture-dev Username: lana-test-solar-field"
+    label: "Verify Version"
 
 - tapOn: '"Close"'

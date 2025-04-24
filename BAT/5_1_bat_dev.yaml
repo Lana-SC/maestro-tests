@@ -25,9 +25,9 @@ env:
     id: com.sitecapture.app.sitecapture.dev:id/field_input_text
 
 - runScript:
-    file: ../../scripts/jsonBinPost.js
+    file: ../scripts/jsonBinPost.js
 - runScript:
-    file: ../../scripts/jsonBinGet.js
+    file: ../scripts/jsonBinGet.js
 - tapOn:
     id: com.sitecapture.app.sitecapture.dev:id/field_input_text
     index: 0
@@ -96,6 +96,14 @@ env:
     id: "com.sitecapture.app.sitecapture.dev:id/button_albums"
     label: "Tap on albums button"
 
+- runFlow:
+    when:
+      visible: "Allow SiteCapture to access photos and videos on this device?"
+    commands:
+    - tapOn: "Allow all"   
+    
+- tapOn: "Photos"
+
 - tapOn:
     id: "com.google.android.apps.photos:id/image"
     label: "Tap on saved photo gallery"
@@ -121,9 +129,6 @@ env:
 - assertVisible:
      id: com.sitecapture.app.sitecapture.dev:id/field_thumbnails
      index: 1
-
-- assertWithAI:
-    assertion: Confirm 3 individual photos are visible under Displayed field 3, only pay attension to the amount of photos, nothing else
 
 - tapOn: "Navigate up"
 

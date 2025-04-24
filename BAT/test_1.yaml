@@ -1,32 +1,14 @@
 appId: com.sitecapture.app.sitecapture.dev
 ---
-# TEST CASE: Forget password
+- tapOn: "Navigate up"
+
+- assertVisible: "All field types"
+
 - tapOn:
-    id: com.sitecapture.app.sitecapture.dev:id/forgot_password_button
-    label: "Tap on forgot password button"
+    id: "com.sitecapture.app.sitecapture.dev:id/refresh_button"
 
-- runFlow:
-    when:
-      visible: "Use without an account"
-    commands:
-      - tapOn: "Use without an account"
+- extendedWaitUntil:
+    visible:
+      text: "Synced"
+    timeout: 45000    
 
-- runFlow:
-    when:
-      visible: "No thanks"
-    commands:
-      - tapOn: "No thanks"
-
-- runFlow:
-    when:
-      visible: "Cancel"
-    commands:
-      - tapOn: "Cancel"
-
-- assertVisible: "Username"
-- tapOn: "Username"
-- tapOn: "Username"
-
-- inputText:
-    text: Lana-test-solar-field
-    label: "Input Username"
